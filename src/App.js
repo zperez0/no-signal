@@ -1,9 +1,13 @@
-import './App.css';
+import React from "react";
+import Header from "./../src/components/Header";
+import NoteControl from "./../src/components/NoteControl";
 
 function App() {
   return (
-    <div className="App">
-    </div>
+    <React.Fragment>
+      <Header />
+      <NoteControl />
+    </React.Fragment>
   );
 }
 
