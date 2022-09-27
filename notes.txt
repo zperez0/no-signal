@@ -3,3 +3,13 @@
 - install tailwind css & react-router-dom
 - setup routes
 - setup signin/signup/account
+
+9/27/22
+- finish user auth
+  - began protected routes
+  
+NEED TO DO:
+- style notes -> WIP
+- protect notes routes
+- indexes -> asign notes to users
+- add subcollections?
