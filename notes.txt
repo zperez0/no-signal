@@ -1,0 +1,5 @@
+9/26/22
+- set up notes basic CRUD
+- install tailwind css & react-router-dom
+- setup routes
+- setup signin/signup/account
