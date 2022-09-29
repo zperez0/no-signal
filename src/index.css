@@ -4,7 +4,6 @@ body {
   position: relative;
 }
 
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
