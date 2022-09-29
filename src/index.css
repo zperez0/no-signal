@@ -1,7 +1,22 @@
 body {
-  background: linear-gradient(-45deg, #EE7752, #E73C7E, #a3e38b, #4bcd9d);
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #a3e38b, #4bcd9d);
   background-size: 400% 400%;
-  position: relative;
+  /* position: relative;
+  margin: 4rem;
+  font-family: "Ubuntu", sans-serif;
+  line-height: 1.7; */
+}
+
+.signCard {
+  /* background-color: #fafafa; */
+  /* width: 50px;
+  height: 50px; */
+  /* display: flex; */
+  margin: 60px;
+  /* justify-content: center;
+align-items: center;
+align-self: center; */
+  /* position: absolute; */
 }
 
 @tailwind base;
@@ -16,7 +31,7 @@ body {
   text-green-500 hover:text-white
     hover:rounded-xl rounded-3xl
     transition-all duration-300 ease-linear
-    cursor-pointer shadow-lg ;
+    cursor-pointer shadow-lg;
   }
 
   .sidebar-tooltip {
