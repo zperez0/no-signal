@@ -1,3 +1,10 @@
+body {
+  background: linear-gradient(-45deg, #EE7752, #E73C7E, #a3e38b, #4bcd9d);
+  background-size: 400% 400%;
+  position: relative;
+}
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
