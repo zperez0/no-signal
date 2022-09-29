@@ -1,3 +1,15 @@
+
+
+body {
+  margin: 4rem;
+  font-family: "Ubuntu", sans-serif;
+  line-height: 1.7;
+  /* background-color: #ced4da; */
+}
+
+
+/* note list */
+
 .note-item {
   display: flex;
   justify-content: space-between;
@@ -75,3 +87,36 @@ align-self: center;
     padding: 0.5rem 1.5rem;
   } */
 }
+
+/* note detail */
+
+.detail {
+  background-color: #023155;
+  padding: 1.7rem;
+  margin: 2rem auto;
+  width: 35rem;
+  /* max-width: 80%; */
+  height: 100%;
+  border-radius: 12px;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0);
+  color: white;
+}
+
+.btn-detail button {
+  border: 0;
+  width: 140px;
+  height: 30px;
+  margin: 1.8%;
+  font: inherit;
+  cursor: pointer;
+  background-color: #f4aa0e;
+  color: white;
+  border-radius: 12px;
+}
+
+.detail button:hover,
+.detail button:active {
+  background-color: #f5c96b;
+  border-color: #f5c96b;
+}
+
