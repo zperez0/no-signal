@@ -13,6 +13,7 @@ function NoteList(props) {
         whenNoteClicked = { props.onNoteSelection }
         title={note.title} 
         body={note.body}
+        // user_id={note.user_id}
         id={note.id}
         key={note.id} />
       ))}

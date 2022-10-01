@@ -8,7 +8,7 @@ function NewNoteForm(props) {
     event.preventDefault()
     props.onNewNoteCreation({
       title: event.target.title.value,
-      body: event.target.body.value,
+      body: event.target.body.value
     })
   }
   return (

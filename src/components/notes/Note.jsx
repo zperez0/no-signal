@@ -25,6 +25,7 @@ Note.propTypes = {
   title: PropTypes.string,
   body: PropTypes.string,
   id: PropTypes.string,
+  // user_id: PropTypes.string,
   whenNoteClicked: PropTypes.func,
 };
 

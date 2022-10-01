@@ -10,6 +10,7 @@ function EditNoteForm(props) {
     props.onEditNote({
       title: event.target.title.value,
       body: event.target.body.value,
+      // user_id: note.user_id,
       id: note.id
     })
   }

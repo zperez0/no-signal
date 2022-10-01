@@ -11,7 +11,12 @@ import {
   doc,
   updateDoc,
   deleteDoc,
+  query,
+  where,
 } from "firebase/firestore";
+
+import { UserAuth } from "../../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 const NoteControl = () => {
   const [formVisibleOnPage, setFormVisibleOnPage] = useState(false);
@@ -19,6 +24,12 @@ const NoteControl = () => {
   const [selectedNote, setSelectedNote] = useState(null);
   const [editing, setEditing] = useState(false);
   const [error, setError] = useState(null);
+
+  // const [title, setTitle] = useState('');
+  // const [body, setBody] = useState('');
+
+  const {user} = UserAuth();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const unSubscribe = onSnapshot(
@@ -28,6 +39,8 @@ const NoteControl = () => {
           return {
             ...doc.data(),
             id: doc.id,
+            // username: user.displayName,
+            // userId: user.uid,
           };
         });
         setMainNotePadList(notes);
@@ -38,6 +51,22 @@ const NoteControl = () => {
     );
     return () => unSubscribe();
   }, []);
+
+  useEffect(() =>{
+    if(user.uid){
+      const notesRef = collection(db, 'notes')
+      const userNotes = query(notesRef, where('userId', '==', user.uid));
+      const unSubscribe = onSnapshot(userNotes, (snapshot) => {
+
+        let notes = []
+        snapshot.docs.forEach((doc) => {
+          notes.push({...doc.data(), id: doc.id})
+        })
+        setMainNotePadList(notes)
+      });
+      return ()=> unSubscribe();
+    }
+  },[user])
 
   const handleClick = () => {
     if (selectedNote != null) {
@@ -50,10 +79,14 @@ const NoteControl = () => {
   };
 
   const handleAddingNewNoteToList = async (newNoteData) => {
-    const collectionRef = collection(db, "notes");
-    await addDoc(collectionRef, newNoteData);
-    setFormVisibleOnPage(false);
-  };
+    if(user){
+      const collectionRef = collection(db, "notes");
+      await addDoc(collectionRef, newNoteData);
+    };
+    setFormVisibleOnPage(false); 
+    }  
+
+
 
   const handleChangingSelectedNote = (id) => {
     const selection = mainNotePadList.filter((note) => note.id === id)[0];
@@ -118,6 +151,6 @@ const NoteControl = () => {
       </div>
     </>
   );
-}
+  }
 
 export default NoteControl;
