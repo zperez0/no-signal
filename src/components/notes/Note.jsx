@@ -1,54 +1,33 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Card from "../UI/Card";
-import "./NoteItem.css";
+import "../UI/NoteItem.css";
 
-function Note(props) {
+const Note = (props) => {
   return (
-    <React.Fragment>
+    <>
+      <div className="flex flex-col items-center">
       <div className="container">
-      <Card className="note-item">
-        <div className="note-item__title">
-          <div onClick={() => props.whenNoteClicked(props.id)}>
-            <h3>{props.title}</h3>
+        <div className="w-80">
+          <div className="card m-2 cursor-pointer bg-gray-100 border border-white rounded-lg hover:shadow-md hover:border-opacity-0 transform hover:-translate-y-1 transition-all duration-200">
+            <div className="m-6">
+              <div onClick={() => props.whenNoteClicked(props.id)}>
+                <h2 className="text-lg mb-2">{props.title}</h2>
+              </div>
+            </div>
           </div>
         </div>
-
-        <p>Date</p>
-      </Card>
       </div>
-    </React.Fragment>
+      </div>
+    </>
   );
-}
+};
 
 Note.propTypes = {
   title: PropTypes.string,
   body: PropTypes.string,
   id: PropTypes.string,
-  // user_id: PropTypes.string,
   whenNoteClicked: PropTypes.func,
 };
 
 export default Note;
-
-// -----NOTES-----
-// WIP: work on fixing grid layout
-
-// function Note(props) {
-//   return (
-//     <React.Fragment>
-// <div className="mt-12 h-20 flex flex-wrap justify-center">
-// <div className="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-lg flex items-center space-x-4">
-//   <div>
-//     <div className="text-xl font-medium text-black"> <div onClick={() => props.whenNoteClicked(props.id)}>
-//               <h3>{props.title}</h3>
-//               </div>
-//               </div>
-//               <p className="text-slate-500">Date</p>
-//   </div>
-// </div>
-// </div>
-
-//     </React.Fragment>
-//   );
-// }
