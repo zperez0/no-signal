@@ -3,6 +3,7 @@ import NewNoteForm from "./NewNoteForm";
 import NoteDetail from "./NoteDetail";
 import NoteList from "./NoteList";
 import EditNoteForm from "./EditNoteForm";
+import "../UI/Background.css";
 import { db } from "../../firebase.js";
 import {
   collection,
@@ -14,9 +15,7 @@ import {
   query,
   where,
 } from "firebase/firestore";
-
 import { UserAuth } from "../../context/AuthContext";
-import { useNavigate } from "react-router-dom";
 
 const NoteControl = () => {
   const [formVisibleOnPage, setFormVisibleOnPage] = useState(false);
@@ -25,11 +24,7 @@ const NoteControl = () => {
   const [editing, setEditing] = useState(false);
   const [error, setError] = useState(null);
 
-  // const [title, setTitle] = useState('');
-  // const [body, setBody] = useState('');
-
-  const {user} = UserAuth();
-  const navigate = useNavigate();
+  const { user } = UserAuth();
 
   useEffect(() => {
     const unSubscribe = onSnapshot(
@@ -39,8 +34,6 @@ const NoteControl = () => {
           return {
             ...doc.data(),
             id: doc.id,
-            // username: user.displayName,
-            // userId: user.uid,
           };
         });
         setMainNotePadList(notes);
@@ -52,21 +45,20 @@ const NoteControl = () => {
     return () => unSubscribe();
   }, []);
 
-  useEffect(() =>{
-    if(user.uid){
-      const notesRef = collection(db, 'notes')
-      const userNotes = query(notesRef, where('userId', '==', user.uid));
+  useEffect(() => {
+    if (user.uid) {
+      const notesRef = collection(db, "notes");
+      const userNotes = query(notesRef, where("userId", "==", user.uid));
       const unSubscribe = onSnapshot(userNotes, (snapshot) => {
-
-        let notes = []
+        let notes = [];
         snapshot.docs.forEach((doc) => {
-          notes.push({...doc.data(), id: doc.id})
-        })
-        setMainNotePadList(notes)
+          notes.push({ ...doc.data(), id: doc.id });
+        });
+        setMainNotePadList(notes);
       });
-      return ()=> unSubscribe();
+      return () => unSubscribe();
     }
-  },[user])
+  }, [user]);
 
   const handleClick = () => {
     if (selectedNote != null) {
@@ -79,14 +71,12 @@ const NoteControl = () => {
   };
 
   const handleAddingNewNoteToList = async (newNoteData) => {
-    if(user){
+    if (user) {
       const collectionRef = collection(db, "notes");
       await addDoc(collectionRef, newNoteData);
-    };
-    setFormVisibleOnPage(false); 
-    }  
-
-
+    }
+    setFormVisibleOnPage(false);
+  };
 
   const handleChangingSelectedNote = (id) => {
     const selection = mainNotePadList.filter((note) => note.id === id)[0];
@@ -128,12 +118,12 @@ const NoteControl = () => {
         onClickingEdit={handleEditClick}
       />
     );
-    buttonText = "Return to note list";
+    buttonText = "Return To Notes";
   } else if (formVisibleOnPage) {
     currentlyVisibleState = (
       <NewNoteForm onNewNoteCreation={handleAddingNewNoteToList} />
     );
-    buttonText = "Return to note list";
+    buttonText = "Return To Notes";
   } else {
     currentlyVisibleState = (
       <NoteList
@@ -145,12 +135,21 @@ const NoteControl = () => {
   }
   return (
     <>
-      {currentlyVisibleState}
-      <div className="button">
-      {error ? null : <button className="px-4 py-1 text-sm text-purple-600 font-semibold rounded-full border border-purple-200 hover:text-white hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2" onClick={handleClick}>{buttonText}</button>}
+      <div className="background">
+        {currentlyVisibleState}
+        <div className="flex flex-col items-center">
+          {error ? null : (
+            <button
+              className="px-4 py-1 text-sm text-black-600 font-semibold rounded-full border hover:text-white hover:bg-blue-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
+              onClick={handleClick}
+            >
+              {buttonText}
+            </button>
+          )}
+        </div>
       </div>
     </>
   );
-  }
+};
 
 export default NoteControl;
