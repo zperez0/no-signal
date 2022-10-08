@@ -7,16 +7,16 @@ function NoteList(props) {
 
   return (
     <>
-      <h2 className="p-6 text-center">List</h2>
+      <div className="p-6 text-center">
       {props.noteList.map((note) => (
         <Note
         whenNoteClicked = { props.onNoteSelection }
         title={note.title} 
         body={note.body}
-        // user_id={note.user_id}
         id={note.id}
         key={note.id} />
       ))}
+      </div>
     </>
   );
 }
