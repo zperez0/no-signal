@@ -5,9 +5,9 @@ const ReusableForm = (props) => {
   return (
     <>
       <div className="flex flex-col items-center">
-        <div class="block p-6 rounded-lg shadow-lg bg-white max-w-md my-10">
+        <div className="block p-6 rounded-lg shadow-lg bg-white max-w-md my-10">
           <form onSubmit={props.formSubmissionHandler}>
-            <div class="form-group mb-6">
+            <div className="form-group mb-6">
               <input
                 type="text"
                 name="title"
@@ -29,11 +29,11 @@ const ReusableForm = (props) => {
                 id="exampleInput7"
               />
             </div>
-            <div class="form-group mb-6">
+            <div className="form-group mb-6">
               <textarea
                 name="body"
                 placeholder="body"
-                class="
+                className="
                 form-control
                 block
                 w-full
@@ -56,7 +56,7 @@ const ReusableForm = (props) => {
             </div>
             <button
               type="submit"
-              class="
+              className="
                 w-full
                 px-6
                 py-2.5
