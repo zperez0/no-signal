@@ -6,7 +6,7 @@ const WeatherControl = () => {
   const [data, setData] = useState({});
   const [location, setLocation] = useState("");
 
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=5b84f813454ea51cc8696590e70e48f7`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=${process.env.REACT_APP_API_KEY_WEATHER}`;
 
   const searchLocation = (event) => {
     if (event.key === "Enter") {
