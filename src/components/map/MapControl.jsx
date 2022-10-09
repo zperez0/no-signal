@@ -31,6 +31,9 @@ const Map = () => {
 
   return (
     <div className="background">
+      <h2 class="py-5 text-center font-medium leading-tight text-4xl mt-0 mb-2 text-black">
+        Map Quest
+      </h2>
       <div className="places-container">
         <PlacesAutocomplete setSelected={setSelected} />
       </div>

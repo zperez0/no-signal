@@ -9,10 +9,12 @@
 
 .map-container {
   width: 95%;
-  height: 100vh;
+  height: 80vh;
 }
 
 .combobox-input {
   width: 100%;
   padding: 0.5rem;
+  margin-top: 6rem;
+  margin-left: 5rem;
 }
