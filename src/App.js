@@ -8,7 +8,7 @@ import Account from "./components/users/Account";
 import { AuthContextProvider } from "./context/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute";
 import SideBar from "./components/navbar/SideBar";
-import ParksControl from "./components/nationalAPI/ParksControl";
+import ParksControl from "./components/parks/ParksControl";
 import MapControl from "./components/map/MapControl";
 
 import WeatherControl from "./components/weather/WeatherControl";
