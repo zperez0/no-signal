@@ -135,7 +135,7 @@ const NoteControl = () => {
   }
   return (
     <>
-      <div className="background">
+      <div className="noteImg">
         {currentlyVisibleState}
         <div className="flex flex-col items-center">
           {error ? null : (
