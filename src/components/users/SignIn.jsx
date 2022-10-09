@@ -1,11 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-<<<<<<< HEAD
-import { UserAuth } from '../../context/AuthContext';
-=======
 import { UserAuth } from "../../context/AuthContext";
 import "../UI/Background.css";
->>>>>>> simpleNotes
 
 const SignIn = () => {
   const [email, setEmail] = useState("");
