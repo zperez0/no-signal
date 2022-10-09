@@ -20,6 +20,9 @@ const WeatherControl = () => {
 
   return (
     <div className="weather">
+      <h2 class="py-5 text-center font-medium leading-tight text-4xl mt-0 mb-2 text-white">
+        Weather Channel
+      </h2>
       <div className="search">
         <input
           value={location}

@@ -136,6 +136,9 @@ const NoteControl = () => {
   return (
     <>
       <div className="noteImg">
+        <h2 class="py-5 text-center font-medium leading-tight text-4xl mt-0 mb-2 text-black">
+          Journal Entries
+        </h2>
         {currentlyVisibleState}
         <div className="flex flex-col items-center">
           {error ? null : (
