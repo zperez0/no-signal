@@ -120,7 +120,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ---
 
 ## Known Bugs
-* _No known bugs._
+* _When a user updates a note, they must complete each field. Otherwise, it will return empty fields_
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
