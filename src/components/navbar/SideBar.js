@@ -3,13 +3,14 @@ import { FaCompass, FaUserCircle } from "react-icons/fa";
 import { IoMapOutline } from "react-icons/io5";
 import { GiBackpack } from "react-icons/gi";
 import { WiDayCloudy } from "react-icons/wi";
+import { RiLogoutCircleRLine } from "react-icons/ri";
 import { useNavigate } from "react-router-dom";
 
 import { UserAuth } from "../../context/AuthContext";
 
 const SideBar = ({ text }) => {
   const navigate = useNavigate();
-  const { user } = UserAuth();
+  const { user, logout } = UserAuth();
 
   if (user.uid) {
     const handleTrails = () => {
@@ -31,6 +32,17 @@ const SideBar = ({ text }) => {
     const handleAccount = () => {
       navigate("/account");
     };
+
+    const handleLogout = async () => {
+      try {
+        await logout();
+        navigate("/");
+        console.log("You are logged out");
+      } catch (error) {
+        console.log(error.message);
+      }
+    };
+
 
     return (
       <div
@@ -56,6 +68,11 @@ const SideBar = ({ text }) => {
         <button onClick={handleAccount}>
           <SideBarIcon icon={<FaUserCircle size="24" />} />
         </button>
+
+        <button onClick={handleLogout}>
+          <SideBarIcon icon={<RiLogoutCircleRLine size="24" />} />
+        </button>
+
       </div>
     );
   }
