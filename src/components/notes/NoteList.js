@@ -7,7 +7,7 @@ function NoteList(props) {
 
   return (
     <>
-      <h2>List</h2>
+      <div className="p-6 text-center">
       {props.noteList.map((note) => (
         <Note
         whenNoteClicked = { props.onNoteSelection }
@@ -16,6 +16,7 @@ function NoteList(props) {
         id={note.id}
         key={note.id} />
       ))}
+      </div>
     </>
   );
 }

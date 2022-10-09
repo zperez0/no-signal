@@ -3,3 +3,41 @@
 - install tailwind css & react-router-dom
 - setup routes
 - setup signin/signup/account
+
+9/27/22
+- finish user auth
+  - began protected routes
+
+9/28/22
+completed:
+- change nav bar icon
+- link buttons to routes
+- change background color
+- style cards
+- style note detail
+- fix firebase
+
+
+to do:
+- style note form
+- change color to note cards ( clear / white? )
+- change button color
+- resize sign in/up form
+- validate form
+  - fix update
+- APIS
+  - maps
+  - hikes
+- style user account
+
+  
+NEED TO DO:
+- style notes -> WIP
+- protect notes routes
+- indexes -> asign notes to users
+- add subcollections?
+
+
+Fix:
+9/28
+- detail card doesn't stretch when the body is long

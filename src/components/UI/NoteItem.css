@@ -1,0 +1,45 @@
+.noteImg {
+  background-image: url(../../images/noteImg.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* note list */
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 580px) {
+  .note-item__title {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    flex: 1;
+  }
+}
+
+/* note detail */
+
+.btn-detail button {
+  border: 0;
+  width: 250px;
+  height: 33px;
+  margin: 1.8%;
+  font: inherit;
+  cursor: pointer;
+  background-color: #f4aa0e;
+  color: white;
+  border-radius: 12px;
+}
+
+.detail button:hover,
+.detail button:active {
+  background-color: #f5c96b;
+  border-color: #f5c96b;
+}

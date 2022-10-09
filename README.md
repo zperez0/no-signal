@@ -1,8 +1,55 @@
-# Getting Started with Create React App
+## No Signal App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React application which uses Google Maps API and Open Weather Map API. 
 
-## Available Scripts
+#### By _**Z Perez**_
+
+## Technologies Used
+* _React_
+* _JavaScript_
+* _HTML_
+* _CSS_
+* _Tailwind_
+* _Firebase_
+* _Markdown_
+
+## Description
+This application uses Axios to display the API data. Users can create, update, delete a note. Search a location through the Google Map and check out the weather in the area. 
+
+## WIP
+I'm working on getting the National Park API set up so users can search and learn more about the parks.
+
+
+## Setup/Installation Requirements
+* _Go to [GitHub](https://github.com/zperez0/no-signal.git)_
+* _Clone git repository to local machine_
+```
+$ git clone https://github.com/zperez0/no-signal.git
+```
+* _Navigate to root folder and open directory in your terminal_
+
+#### Build Environment
+* _Install packages:_
+```
+$ npm install
+```
+
+#### Server:
+* _Start server:_
+```
+$ npm start
+```
+###### It should automatically open up the server if not
+
+* _Open up your browser and go to:_
+```
+http://localhost:3000/
+```
+
+---
+
+
+### Available Scripts
 
 In the project directory, you can run:
 
@@ -68,3 +115,14 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+---
+
+## Known Bugs
+* _When a user updates a note, they must complete each field. Otherwise, it will return empty fields_
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
+
+Copyright (c) _2022_, _Z Perez_

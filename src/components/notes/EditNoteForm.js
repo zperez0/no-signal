@@ -10,14 +10,15 @@ function EditNoteForm(props) {
     props.onEditNote({
       title: event.target.title.value,
       body: event.target.body.value,
-      id: note.id
-    })
+      id: note.id,
+    });
   }
   return (
     <>
-      <ReusableForm 
-      formSubmissionHandler={handleEditNoteFormSubmission}
-      buttonText="Update Note" />
+      <ReusableForm
+        formSubmissionHandler={handleEditNoteFormSubmission}
+        buttonText="Update Note"
+      />
     </>
   );
 }
@@ -25,6 +26,6 @@ function EditNoteForm(props) {
 EditNoteForm.propTypes = {
   note: PropTypes.object,
   onEditNote: PropTypes.func,
-}
+};
 
 export default EditNoteForm;
