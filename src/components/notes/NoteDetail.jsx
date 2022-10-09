@@ -10,7 +10,7 @@ const NoteDetail = (props) => {
         <div className="container">
           <div className="w-96 my-10">
             <div className="flex justify-center">
-              <div className="mb-6 rounded-lg shadow-lg bg-white max-w-sm">
+              <div className="mb-6 rounded-lg shadow-lg bg-white opacity-75 max-w-sm">
                 <div className="p-14">
                   <h5 className="text-gray-900 text-xl font-medium mb-2 text-center">
                     {note.title}
