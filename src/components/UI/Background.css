@@ -1,0 +1,7 @@
+.background {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #a3e38b, #4bcd9d);
+  background-size: 400% 400%;
+  padding-left: 10rem;
+  width: 100vw;
+  height: 140vh;
+}
