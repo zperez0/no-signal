@@ -1,6 +1,5 @@
 ## No Signal App
-
-A React application which uses Google Maps API and Open Weather Map API. 
+Have you ever wanted to write a note, check the location of a park or trailhead, and verify weather conditions all in one place before your big hiking adventure? No? Great well this app is for you!
 
 #### By _**Z Perez**_
 
@@ -14,7 +13,7 @@ A React application which uses Google Maps API and Open Weather Map API.
 * _Markdown_
 
 ## Description
-This application uses Axios to display the API data. Users can create, update, delete a note. Search a location through the Google Map and check out the weather in the area. 
+A React application which uses the Google Maps API and the Open Weather Map API. Users can create, update, and delete notes. Search for a location through the interactive map, verify weather conditions and check out the top national parks. 
 
 ## WIP
 I'm working on getting the National Park API set up so users can search and learn more about the parks.
